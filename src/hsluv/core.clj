@@ -1,6 +1,8 @@
-(ns hsluv.core)
+(ns hsluv.core
+  (:require [clojure.core.matrix :as m]))
+
 
 (defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+  "Do some matrix operations"
+  []
+  (m/shape [[1 2] [3 4]]))
