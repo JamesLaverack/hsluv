@@ -10,8 +10,8 @@
       (loop [colour (first (vals data))
              remaining-colours (rest (vals data))]
         (if (not (nil? colour))
-          (let [rgb (get colour "rgb")
-                xyz (get colour "xyz")]
+          (let [rgb (map double (get colour "rgb"))
+                xyz (map double (get colour "xyz"))]
             (is (= xyz (rgb-to-xyz rgb)))
             (recur (first remaining-colours) (rest remaining-colours))))))))
       
