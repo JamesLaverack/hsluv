@@ -5,7 +5,7 @@
             [hsluv.core :refer :all]))
 
 (deftest rgb-to-xyz-test
-  (testing "sRGB to CIE XYZ converstion"
+  (testing "sRGB to CIE XYZ conversion"
     (let [data (json/read (io/reader (io/resource "snapshot-rev4.json")))]
       (loop [colour (first (vals data))
              remaining-colours (rest (vals data))]
