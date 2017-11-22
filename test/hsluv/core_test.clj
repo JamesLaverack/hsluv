@@ -14,4 +14,15 @@
                 xyz (map double (get colour "xyz"))]
             (is (= xyz (rgb-to-xyz rgb)))
             (recur (first remaining-colours) (rest remaining-colours))))))))
-      
+
+(deftest xyz-to-rgb-test
+  (testing "CIE XYZ to sRGB conversion"
+    (let [data (json/read (io/reader (io/resource "snapshot-rev4.json")))]
+      (loop [colour (first (vals data))
+             remaining-colours (rest (vals data))]
+        (if (not (nil? colour))
+          (let [rgb (map double (get colour "rgb"))
+                xyz (map double (get colour "xyz"))]
+            (is (= rgb (xyz-to-rgb xyz)))
+            (recur (first remaining-colours) (rest remaining-colours))))))))
+
