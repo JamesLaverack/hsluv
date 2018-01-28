@@ -70,8 +70,3 @@
       (list l
             (* 13 l (- (var-u xyz) ref-u))
             (* 13 l (- (var-v xyz) ref-v))))))
-
-(defn foo
-  "Do some matrix operations"
-  []
-  (matrix/shape [[1 2] [3 4]]))
