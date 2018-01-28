@@ -1,4 +1,4 @@
-(defproject hsluv "0.1.0-SNAPSHOT"
+(defproject hsluv "0.2.0-SNAPSHOT"
   :description "Pure Clojure implementation of HSLuv"
   :url "https://github.com/JamesLaverack/hsluv"
   :license {:name "MIT"
@@ -6,4 +6,5 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [net.mikera/core.matrix "0.61.0"]
                  [org.clojure/math.numeric-tower "0.0.4"]]
-  :profiles {:test {:dependencies [[org.clojure/data.json "0.2.6"]]}})
+  :profiles {:test {:dependencies [[org.clojure/data.json "0.2.6"]
+                                   [org.clojure/algo.generic "0.1.2"]]}})
