@@ -1,4 +1,4 @@
-(defproject hsluv "0.1.0-SNAPSHOT"
+(defproject hsluv "0.2.0-SNAPSHOT"
   :description "Pure Clojure implementation of HSLuv"
   :url "https://github.com/JamesLaverack/hsluv"
   :license {:name "MIT"
