@@ -36,3 +36,14 @@
                 xyz (map double (get colour "xyz"))]
             (is (colour-match rgb (xyz-to-rgb xyz)))
             (recur (first remaining-colours) (rest remaining-colours))))))))
+
+(deftest xyz-to-luv-test
+  (testing "CIE XYZ to LUV conversion"
+    (let [data (json/read (io/reader (io/resource "snapshot-rev4.json")))]
+      (loop [colour (first (vals data))
+             remaining-colours (rest (vals data))]
+        (if (not (nil? colour))
+          (let [luv (map double (get colour "luv"))
+                xyz (map double (get colour "xyz"))]
+            (is (colour-match luv (xyz-to-luv xyz)))
+            (recur (first remaining-colours) (rest remaining-colours))))))))
